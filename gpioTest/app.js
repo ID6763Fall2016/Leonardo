@@ -28,12 +28,14 @@ btn.watch(function(err,state){
 app.post("/turnon",function(req,res){
 	console.log("turn on");
 	led.writeSync(1);
+	res.send("Message from RC : ON");
 	res.redirect('back');
 });
 
 app.post("/turnoff",function(req,res){
 	console.log("turn off");
 	led.writeSync(0);
+	res.send("Message from RC : OFF");
 	res.redirect('back');
 });
 
