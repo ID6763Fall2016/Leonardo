@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="Microsoft Dictionary">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+
+    <!-- angular -->
+    <script src="js/angular.min.js"></script>
+
+
+
+
+    <link href="./css/bootstrap.css" rel="stylesheet"/>
+    <link href="./css/app.css" rel="stylesheet"/>
+    <link href="./css/hexagons.css" rel="stylesheet"/>
+
+
+
+    <title>Noise monitor</title>
+</head>
+<body ng-app="SP" ng-controller="SPCtrl">
+
+<div class="noiseContainer">
+    <div id="noiseInfo">
+        <div id="noiseMap" class="noisePanel">
+
+            <ul id="hexGrid">
+                <li class="hex" ng-repeat="item in list">
+                    <a class="hexIn" href="#">
+
+                        <h1>{{item}}</h1>
+                        <p>cc</p>
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+        <div id="noiseDetail" class="noisePanel">
+
+
+        </div>
+
+
+    </div>
+
+    <div class="clear"></div>
+    <div id="lineChart" class="noisePanel"></div>
+
+</div>
+
+<script src="js/jquery-1.9.1.js"></script>
+<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+<script src="js/mychart.js"></script>
+<script src="js/app.js"></script>
+<script type="text/javascript" src="js/highcharts.js"></script>
+
+</body>
+</html>
