@@ -16,11 +16,11 @@ io.on('connection', function (socket) {
 
     var sendRandomNumbers = setInterval( function(){
         var averageValue = Math.random() * 40+20;
-        var currentValue = averageValue-(Math.random()-0.5)*10;
+        var currentValue = averageValue-(Math.random()-0.5)*30;
         var data = [averageValue,currentValue];
         console.log(data);
         socket.emit('messageFromServerToClient', data);
-    },1000);
+    },300);
 
     socket.on('disconnect', function(){
         console.log("user disconnected from socket");

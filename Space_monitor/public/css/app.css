@@ -277,7 +277,7 @@ body{
     top :20px;
     right : 2%;
     width : 30%;
-    height : 360px;
+    height : 400px;
     background : rgba(22,22,22,0.75);
 }
 
@@ -286,10 +286,10 @@ body{
 #lineChart{
 
     position : absolute;
-    top :400px;
+    top :435px;
     left :2%;
     width:96%;
-    height:300px;
+    height:260px;
 
 
 

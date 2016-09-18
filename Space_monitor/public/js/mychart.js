@@ -216,29 +216,14 @@ $(function () {
     var chartInterval=1000;
     var chartNum=40;
 
+
+
     $('#lineChart').highcharts({
         chart: {
             type: 'spline',
             animation: false, // don't animate in old IE
             marginRight: 10
-            // events: {
-            //     load: function() {
-            //
-            //         // set up the updating of the chart each second
-            //         var series1 = this.series[0];
-            //         var series2 = this.series[1];
-            //         setInterval(function() {
-            //             var x = (new Date()).getTime(), // current time
-            //                 y = Math.random()*10+40;
-            //             series1.addPoint([x, y], true, true);
-            //             series2.addPoint([x, y/0.9], true, true);
-            //
-            //
-            //
-            //
-            //         }, 1000);
-            //     }
-            //}
+
         },
         title: {
             text: 'Wind speed during two days'
@@ -376,6 +361,161 @@ $(function () {
                 fontSize: '10px'
             }
         }
+    });
+
+
+    mapboxgl.accessToken = 'pk.eyJ1IjoicmNtZW5nOTMiLCJhIjoiYWNTRWZIdyJ9.pTxGaGk5tFqB_-R1KO1fmg';
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/dark-v9',
+        zoom: 17,
+        doubleClickZoom:false,
+        scrollZoom:false,
+        //zoom: 15,
+        pitch: 10,
+        //center: [-71.97722138410576, -13.517379300798098]
+        center: [-84.396,33.776]
+    });
+
+
+    map.on('load', function () {
+        map.addSource('study', {
+            "type": "geojson",
+            "data": "js/study.geojson"
+        });
+        map.addSource('key', {
+            "type": "geojson",
+            "data": {
+                "type"      : "Feature",
+                "properties": {},
+                "geometry"  : {
+                    "coordinates": [
+                        -84.396038,
+                        33.776182
+                    ],
+                    "type"       : "Point"
+                },
+                "id"        : "82247790a3f91dd0cb62fc3390eb652a"
+            }
+        });
+
+        map.addLayer({
+            'id'          : 'study',
+            'type'        : 'circle',
+            'source'      : 'study',
+            'layout'      : {
+                'visibility': 'visible'
+            },
+            'paint'       : {
+                'circle-radius': 10,
+                'circle-color' : 'rgba(143,237,126,0.8)'
+            }
+        });
+        map.addLayer({
+            'id'          : 'key',
+            'type'        : 'circle',
+            'source'      : 'key',
+            'layout'      : {
+                'visibility': 'visible'
+            },
+            'paint'       : {
+                'circle-radius': 20,
+                'circle-color' : 'rgba(143,237,126,0.8)'
+            }
+        });
+
+
+
+
+
+
+
+        map.on('click', function (e) {
+            // Use queryRenderedFeatures to get features at a click event's point
+            // Use layer option to avoid getting results from other layers
+            var features = map.queryRenderedFeatures(e.point, { layers: ['study','key'] });
+            // if there are features within the given radius of the click event,
+            // fly to the location of the click event
+
+            if (features.length) {
+                var c=features[0].geometry.coordinates;
+                map.flyTo({center: [c[0]+0.0008,c[1]-0.0005]});
+            }
+            var feature = features[0];
+
+            // Populate the popup and set its coordinates
+            // based on the feature found.
+            var popup = new mapboxgl.Popup()
+                .setLngLat(feature.geometry.coordinates)
+                .setHTML(feature.properties.description)
+                .addTo(map);
+        });
+
+
+
+
+
+// Use the same approach as above to indicate that the symbols are clickable
+// by changing the cursor style to 'pointer'.
+        map.on('mousemove', function (e) {
+            var features = map.queryRenderedFeatures(e.point, { layers: ['symbols'] });
+            map.getCanvas().style.cursor = features.length ? 'pointer' : '';
+        });
+
+
+
+
+
+
+
+
+        var socket = io();
+
+        socket.on('messageFromServerToClient', function(data) {
+            var chart = $('#lineChart').highcharts();
+
+            socket.emit('messageFromClientToServer', "received: "+data);
+
+
+            var colorP, sizeP;
+            var f=data[1]-data[0];
+            console.log(f);
+            sizeP=data[1]/6+8;
+            if(f<-30){
+                colorP="#A5B8FF";
+            }
+            else if(f>-30&&f<-10){
+                colorP="#97EAFF";
+            }
+            else if(f>-10&&f<10){
+                colorP="#7bc66d";
+            }
+            else if(f>10&&f<30){
+                colorP="#FFDE74";
+            }
+            else{
+                colorP="#FF7458";
+            }
+
+
+
+
+
+            map.setPaintProperty('key', 'circle-color', colorP);
+            map.setPaintProperty('key', 'circle-radius', sizeP);
+
+
+            var x = (new Date()).getTime();
+            chart.series[0].addPoint([x,data[0]], true, true);
+            chart.series[1].addPoint([x,data[1]], true, true);
+
+        });
+
+
+
+
+
+
     });
 
 
