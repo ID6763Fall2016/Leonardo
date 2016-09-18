@@ -8,13 +8,13 @@
 
     <!-- angular -->
     <script src="js/angular.min.js"></script>
-
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.23.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.23.0/mapbox-gl.css' rel='stylesheet' />
 
 
 
     <link href="./css/bootstrap.css" rel="stylesheet"/>
     <link href="./css/app.css" rel="stylesheet"/>
-    <link href="./css/hexagons.css" rel="stylesheet"/>
 
 
 
@@ -23,26 +23,8 @@
 <body ng-app="SP" ng-controller="SPCtrl">
 
 <div class="noiseContainer">
-    <div id="noiseInfo">
-        <div id="noiseMap" class="noisePanel">
-
-            <ul id="hexGrid">
-                <li class="hex" ng-repeat="item in list">
-                    <a class="hexIn" href="#">
-
-                        <h1>{{item}}</h1>
-                        <p>cc</p>
-                    </a>
-                </li>
-
-            </ul>
-
-        </div>
-        <div id="noiseDetail" class="noisePanel">
-
-
-        </div>
-
+    <div id='map'></div>
+    <div id="noiseDetail" class="noisePanel">
 
     </div>
 

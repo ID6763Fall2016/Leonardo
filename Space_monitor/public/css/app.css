@@ -243,8 +243,7 @@ body{
 
 .noiseContainer{
     margin : 0;
-    padding : 10px 15px;
-    background : url('../img/bg.jpg');
+
 
 }
 .noisePanel{
@@ -263,33 +262,41 @@ body{
     height: 400px;
     padding: 5px 0;
 }
+#map{
+    width : 100%;
+    position:fixed;
+    top:0;
+    bottom:0;
+}
 
 
 
 #noiseDetail{
 
-
-    float : right;
+    position : absolute;
+    top :20px;
+    right : 2%;
     width : 30%;
-    height : 100%;
-    background : rgba(0,0,0,0.5);
+    height : 360px;
+    background : rgba(22,22,22,0.75);
 }
 
 
 
 #lineChart{
 
-
-    width:100%;
+    position : absolute;
+    top :400px;
+    left :2%;
+    width:96%;
     height:300px;
 
 
 
 }
 
-.hex a{
-    background : rgba(0,0,0,0.7);
+
+
+.mapboxgl-ctrl-attrib{
+    display:none;
 }
-
-
-

@@ -20,7 +20,7 @@ $(function () {
         colors: ["#2b908f", "#90ee7e", "#f45b5b", "#7798BF", "#aaeeee", "#ff0066", "#eeaaee",
             "#55BF3B", "#DF5353", "#7798BF", "#aaeeee"],
         chart: {
-            backgroundColor: 'rgba(0,0,0,0.5)',
+            backgroundColor: 'rgba(22,22,22,0.85);',
             style: {
                 fontFamily: "'Unica One', sans-serif"
             },
@@ -201,7 +201,7 @@ $(function () {
         },
 
         // special colors for some of the
-        legendBackgroundColor: 'rgba(0, 0, 0, 0.5)',
+        legendBackgroundColor: 'rgba(22,22,22,0.75)',
         background2: '#505053',
         dataLabelsColor: '#B0B0B3',
         textColor: '#C0C0C0',
