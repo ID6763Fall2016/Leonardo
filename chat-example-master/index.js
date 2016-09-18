@@ -7,9 +7,17 @@ app.get('/', function(req, res){
 });
 
 io.on('connection', function(socket){
-  socket.on('chat message', function(msg){
-    io.emit('chat message', msg);
-  });
+  console.log("user connected to socket");
+	
+	socket.on('messageFromClientToServer', function(data){
+		console.log(data);
+	});
+	
+	var sendRandomNumbers = setInterval( function(){
+		var numberData = Math.random() * 100;
+		console.log(numberData);
+		socket.emit('messageFromServerToClient', numberData);
+	},1000);
 });
 
 http.listen(3000, function(){
