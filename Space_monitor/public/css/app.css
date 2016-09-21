@@ -278,7 +278,7 @@ body{
     right : 2%;
     width : 30%;
     height : 400px;
-    background : rgba(22,22,22,0.75);
+    background : rgba(41, 46, 47, 0.7);
 }
 
 
@@ -299,4 +299,47 @@ body{
 
 .mapboxgl-ctrl-attrib{
     display:none;
+}
+
+.detailItem {
+    padding: 0px 15px;
+    height: 90px;
+    font-family: 'Unica One';
+    color: #fff;
+    text-transform: uppercase;
+    border-bottom: 1px solid #444;
+}
+.detailItemBar{
+
+    height: 30px;
+
+    width: 100%;
+
+    background: #fff;
+
+    margin-bottom: 4px;
+}
+
+.detailItemBar .bar-num{
+    position : relative;
+    left : 12px;
+    top : 1px;
+    font-size : 20px;
+}
+
+.detailLables{
+
+    font-size: 11px;
+
+    color: #bdbdbd;
+}
+
+.lable-left{
+
+    float: left;
+}
+
+.lable-right{
+
+    float: right;
 }

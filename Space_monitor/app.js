@@ -15,7 +15,7 @@ io.on('connection', function (socket) {
     });
 
     var sendRandomNumbers = setInterval( function(){
-        var averageValue = Math.random() * 40+20;
+        var averageValue = Math.random() * 6+40;
         var currentValue = averageValue-(Math.random()-0.5)*30;
         var data = [averageValue,currentValue];
         console.log(data);

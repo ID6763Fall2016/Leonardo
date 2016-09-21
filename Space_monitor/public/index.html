@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="myApp" >
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -20,12 +20,63 @@
 
     <title>Noise monitor</title>
 </head>
-<body >
+<body ng-controller="myCtrl">
 
-<div class="noiseContainer">
+<div  class="noiseContainer">
     <div id='map'></div>
     <div id="noiseDetail" class="noisePanel">
 
+        <div class="detailList">
+            <div class="detailItem">
+                <div class="detailItemLable">
+                    <h4>Recommendation Scores</h4>
+                </div>
+                <div class="detailItemBar" id="ratV">
+                    <span class="bar-num">{{ratValue}}</span>
+                </div>
+                <div class="detailLables">
+                    <span class="lable-left">Min: 0</span>
+                    <span class="lable-right">Max: 100</span>
+                </div>
+            </div>
+
+            <div class="detailItem">
+                <div class="detailItemLable">
+                    <h4>Current Value</h4>
+                </div>
+                <div class="detailItemBar" id="curV">
+                    <span class="bar-num">{{curValue}}</span>
+                </div>
+                <div class="detailLables">
+                    <span class="lable-left">Min: 0</span>
+                    <span class="lable-right">Max: 100</span>
+                </div>
+            </div>
+
+            <div class="detailItem">
+                <div class="detailItemLable">
+                    <h4>Estimate Value</h4>
+                </div>
+                <div class="detailItemBar" id="estV">
+                    <span class="bar-num">{{estValue}}</span></div>
+                <div class="detailLables">
+                    <span class="lable-left">Min: 0</span>
+                    <span class="lable-right">Max: 100</span>
+                </div>
+            </div>
+
+            <div class="detailItem">
+                <div class="detailItemLable">
+                    <h4>Flunctuation Value</h4>
+                </div>
+                <div class="detailItemBar" id="fluV">
+                    <span class="bar-num">{{fluValue}}</span></div>
+                <div class="detailLables">
+                    <span class="lable-left">Min: 0</span>
+                    <span class="lable-right">Max: 100</span>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="clear"></div>
@@ -35,6 +86,8 @@
 
 <script src="js/jquery-1.9.1.js"></script>
 <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+<script src="js/jquery.animate-colors-min.js"></script>
+<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
 <script src="js/mychart.js"></script>
 <script type="text/javascript" src="js/highcharts.js"></script>
 
