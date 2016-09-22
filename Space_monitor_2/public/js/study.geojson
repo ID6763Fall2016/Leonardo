@@ -1,0 +1,67 @@
+﻿{
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "coordinates": [
+          -84.396576,
+          33.77509
+        ],
+        "type": "Point"
+      },
+
+      "id": "2fc98a5ffc184c1b148075bcf729ee57"
+    },
+
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "coordinates": [
+          -84.395736,
+          33.775768
+        ],
+        "type": "Point"
+      },
+      "id": "84893156f4aa21454cb9c5d97bf3116e"
+    },
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "coordinates": [
+          -84.396291,
+          33.774723
+        ],
+        "type": "Point"
+      },
+      "id": "a0f7c4b9bfe41607e04891190735630c"
+    },
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "coordinates": [
+          -84.396102,
+          33.776778
+        ],
+        "type": "Point"
+      },
+      "id": "a8a3daeaf630bda839e6d0ccc5e9c2bb"
+    },
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "coordinates": [
+          -84.395385,
+          33.776161
+        ],
+        "type": "Point"
+      },
+      "id": "f9169b2315e9db6a751ccb284d79ca0f"
+    }
+  ],
+  "type": "FeatureCollection"
+}
