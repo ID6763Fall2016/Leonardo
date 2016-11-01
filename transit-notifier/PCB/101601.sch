@@ -1,0 +1,198 @@
+EESchema Schematic File Version 2
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:WiFiDotStar_RevA-cache
+LIBS:WiFiDotStar_RevA
+LIBS:101601-cache
+EELAYER 25 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L CONN_01X10 P1
+U 1 1 5808FA11
+P 4975 3450
+F 0 "P1" H 4975 4000 50  0000 C CNN
+F 1 "CONN_01X10" V 5075 3450 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x10" H 4975 3450 50  0001 C CNN
+F 3 "" H 4975 3450 50  0000 C CNN
+	1    4975 3450
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_01X10 P2
+U 1 1 5808FAC7
+P 5475 3425
+F 0 "P2" H 5475 2850 50  0000 C CNN
+F 1 "CONN_01X10" V 5625 3425 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x10" H 5475 3425 50  0001 C CNN
+F 3 "" H 5475 3425 50  0000 C CNN
+	1    5475 3425
+	-1   0    0    1   
+$EndComp
+Text GLabel 4775 3300 0    60   Input ~ 0
+GPIO4
+Text GLabel 4775 3400 0    60   Input ~ 0
+GPIO5
+$Comp
+L GND #PWR01
+U 1 1 580906EA
+P 5675 3875
+F 0 "#PWR01" H 5675 3625 50  0001 C CNN
+F 1 "GND" H 5675 3725 50  0000 C CNN
+F 2 "" H 5675 3875 50  0000 C CNN
+F 3 "" H 5675 3875 50  0000 C CNN
+	1    5675 3875
+	0    -1   -1   0   
+$EndComp
+$Comp
+L CONN_01X04 P3
+U 1 1 5809079B
+P 3425 3425
+F 0 "P3" H 3425 3675 50  0000 C CNN
+F 1 "CONN_01X04" V 3525 3425 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x04" H 3425 3425 50  0001 C CNN
+F 3 "" H 3425 3425 50  0000 C CNN
+	1    3425 3425
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR02
+U 1 1 58090813
+P 3225 3575
+F 0 "#PWR02" H 3225 3325 50  0001 C CNN
+F 1 "GND" H 3225 3425 50  0000 C CNN
+F 2 "" H 3225 3575 50  0000 C CNN
+F 3 "" H 3225 3575 50  0000 C CNN
+	1    3225 3575
+	1    0    0    -1  
+$EndComp
+Text GLabel 3225 3475 0    60   Input ~ 0
+GPIO5
+Text GLabel 3225 3375 0    60   Input ~ 0
+GPIO4
+$Comp
+L +3V3 #PWR03
+U 1 1 58090A9E
+P 5675 3675
+F 0 "#PWR03" H 5675 3525 50  0001 C CNN
+F 1 "+3V3" H 5675 3815 50  0000 C CNN
+F 2 "" H 5675 3675 50  0000 C CNN
+F 3 "" H 5675 3675 50  0000 C CNN
+	1    5675 3675
+	0    1    1    0   
+$EndComp
+$Comp
+L CONN_01X02 P4
+U 1 1 58090AFE
+P 7275 3650
+F 0 "P4" H 7275 3900 50  0000 C CNN
+F 1 "CONN_01X04" V 7375 3650 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x02_Pitch3.96mm_Friction_Lock" H 7275 3650 50  0001 C CNN
+F 3 "" H 7275 3650 50  0000 C CNN
+	1    7275 3650
+	1    0    0    -1  
+$EndComp
+$Comp
+L +3V3 #PWR04
+U 1 1 58090BF6
+P 7075 3600
+F 0 "#PWR04" H 7075 3450 50  0001 C CNN
+F 1 "+3V3" H 7075 3740 50  0000 C CNN
+F 2 "" H 7075 3600 50  0000 C CNN
+F 3 "" H 7075 3600 50  0000 C CNN
+	1    7075 3600
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR05
+U 1 1 58090D6E
+P 7075 4275
+F 0 "#PWR05" H 7075 4025 50  0001 C CNN
+F 1 "GND" H 7075 4125 50  0000 C CNN
+F 2 "" H 7075 4275 50  0000 C CNN
+F 3 "" H 7075 4275 50  0000 C CNN
+	1    7075 4275
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R1
+U 1 1 58090D9E
+P 7075 4025
+F 0 "R1" V 7155 4025 50  0000 C CNN
+F 1 "1k" V 7075 4025 50  0000 C CNN
+F 2 "Resistors_THT:Resistor_Horizontal_RM7mm" V 7005 4025 50  0001 C CNN
+F 3 "" H 7075 4025 50  0000 C CNN
+	1    7075 4025
+	1    0    0    -1  
+$EndComp
+Text GLabel 5675 3475 2    60   Input ~ 0
+Button1
+Text GLabel 6825 3700 0    60   Input ~ 0
+Button1
+Wire Wire Line
+	7075 3700 7075 3875
+Wire Wire Line
+	7075 4175 7075 4275
+Wire Wire Line
+	6825 3700 7075 3700
+$Comp
+L +5V #PWR?
+U 1 1 580BB84E
+P 3225 3275
+F 0 "#PWR?" H 3225 3125 50  0001 C CNN
+F 1 "+5V" H 3225 3415 50  0000 C CNN
+F 2 "" H 3225 3275 50  0000 C CNN
+F 3 "" H 3225 3275 50  0000 C CNN
+	1    3225 3275
+	1    0    0    -1  
+$EndComp
+$Comp
+L +5V #PWR?
+U 1 1 580BB86F
+P 4775 3700
+F 0 "#PWR?" H 4775 3550 50  0001 C CNN
+F 1 "+5V" H 4775 3840 50  0000 C CNN
+F 2 "" H 4775 3700 50  0000 C CNN
+F 3 "" H 4775 3700 50  0000 C CNN
+	1    4775 3700
+	0    -1   -1   0   
+$EndComp
+$EndSCHEMATC
