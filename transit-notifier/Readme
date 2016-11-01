@@ -1,0 +1,17 @@
+Our project is called Notifier Clicker. We used the following software and hardware.
+
+Software:
+
+Arduino
+Openplan
+Kicad
+TinyXML library
+Adafruit Neopixel Library
+Wifi Client Library
+
+Hardware:
+
+ESP8266 x2
+Adafruit DotStar Digital LED Strip 
+Resistor 1K x 2
+Switch x 2
